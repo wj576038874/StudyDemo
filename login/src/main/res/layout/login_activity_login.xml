@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="#FFF"
+    android:orientation="vertical"
+    >
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/login_srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/login_welcome_hint_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="143dp"
+                android:layout_marginBottom="60dp"
+                android:text="登录"
+                android:textColor="#333"
+                android:textSize="24sp" />
+
+            <!--手机号-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_login_phone_region"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/login_phone_region_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="用户名"
+                        android:textColor="#20242C"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="16dp"
+                        android:layout_marginLeft="13dp"
+                        android:background="#fff" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/login_phone_edit"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="yhm"
+                    android:maxLength="13"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:text="wj576038874"
+                    android:textColor="#333"
+                    android:textColorHint="#FFBEC2CC"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toRightOf="@+id/ll_login_phone_region"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view_phone"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#333" />
+
+            <!--验证码-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_code_label"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="密码"
+                    android:textColor="#20242C"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/login_ver_code_edit"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="密码"
+                    android:inputType="textPassword"
+                    android:maxLength="6"
+                    android:paddingLeft="10dp"
+                    android:text="1rujiwang"
+                    android:textColorHint="#FFBEC2CC"
+                    android:textSize="16dp"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_code_label"
+                    app:layout_constraintRight_toLeftOf="@+id/login_get_ver_code_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/login_get_ver_code_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:enabled="false"
+                    android:gravity="center|end"
+                    android:text=""
+                    android:textSize="12dp"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view_code"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#333" />
+
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="登录"
+                android:textColor="#333"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

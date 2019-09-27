@@ -1,0 +1,2 @@
+include ':app', ':home', ':login', ':wechat', ':mine', ':base', ':collection'
+rootProject.name='StudyDemo'

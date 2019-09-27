@@ -1,0 +1,5 @@
+apply plugin: 'kotlin-kapt'
+def dbflow_version = "5.0.0-alpha1"
+dependencies {
+    kapt "com.github.agrosner.dbflow:processor:${dbflow_version}"
+}

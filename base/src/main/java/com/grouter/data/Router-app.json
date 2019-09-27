@@ -1,0 +1,12 @@
+{
+	"activityModels":[],
+	"componentModels":[],
+	"delegateModels":[],
+	"interceptorModels":[
+		{
+			"priority":0,
+			"type":"com.joyrun.study.interceptor.LoginInterceptor"
+		}
+	],
+	"taskModels":[]
+}

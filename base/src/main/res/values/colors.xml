@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="base_colorPrimary">#008577</color>
+    <color name="base_colorPrimaryDark">#00574B</color>
+    <color name="base_colorAccent">#D81B60</color>
+
+    <color name="base_diy_red">#DB3937</color>
+    <color name="base_diy_red2">#cc6f6e</color>
+    <color name="base_diy_gray">#C8C8CE</color>
+    <color name="base_diy_gray2">#999999</color>
+    <color name="base_diy_black">#4d4d4d</color>
+    <color name="base_diy_black2">#000000</color>
+    <color name="base_diy_white">#ffffff</color>
+    <color name="base_diy_white_bg">#F0F0F0</color>
+
+
+    <!--activity默认背景色-->
+    <color name="base_bg">#f5f5f5</color>
+    <color name="base_bg_dark">#c5c5c5</color>
+    <!--分割线-->
+    <color name="base_line">#f5f5f5</color>
+    <!--Dialog弹出默认背景变暗的颜色-->
+    <color name="base_dialog_bg">#aa000000</color>
+    <!--点击水波纹效果的颜色-->
+    <color name="base_ripple_dark">#11000000</color>
+    <color name="base_ripple_light">#11ffffff</color>
+
+    <color name="base_blue">#4282f4</color>
+    <color name="base_green">#3cdc86</color>
+    <color name="base_orange">#f86734</color>
+
+    <!--=======================通用颜色==========================-->
+    <!--主题色-->
+    <color name="base_main">@color/base_blue</color>
+    <color name="base_assist">@color/base_green</color>
+    <color name="base_accent">@color/base_orange</color>
+    <color name="base_transparent">#00000000</color>
+    <color name="base_white">#ffffff</color>
+    <color name="base_white_alpha">#ccffffff</color>
+    <color name="base_black_pure">#000000</color>
+    <color name="base_black">#333333</color>
+    <color name="base_black_alpha">#22000000</color>
+    <color name="base_gray_dark">#666666</color>
+    <color name="base_gray_light">#999999</color>
+    <!--文字颜色-->
+    <color name="base_text_main">@color/base_main</color>
+    <color name="base_text_accent">@color/base_accent</color>
+    <color name="base_text_white">#ffffff</color>
+    <color name="base_text_white_alpha">#88ffffff</color>
+    <color name="base_text_white_dark">#cccccc</color>
+    <color name="base_text_gray_light">#999999</color>
+    <color name="base_text_gray_dark">#666666</color>
+    <color name="base_text_black">#333333</color>
+    
+</resources>

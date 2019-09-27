@@ -1,0 +1,26 @@
+{
+	"activityModels":[
+		{
+			"description":"",
+			"exported":false,
+			"module":"",
+			"name":"",
+			"params":[],
+			"path":"collection/CollectionActivity",
+			"type":"com.joyrun.collection.CollectionActivity"
+		},
+		{
+			"description":"",
+			"exported":false,
+			"module":"",
+			"name":"",
+			"params":[],
+			"path":"collection/WalletActivity",
+			"type":"com.joyrun.collection.WalletActivity"
+		}
+	],
+	"componentModels":[],
+	"delegateModels":[],
+	"interceptorModels":[],
+	"taskModels":[]
+}

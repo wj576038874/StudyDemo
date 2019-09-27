@@ -1,0 +1,36 @@
+{
+	"activityModels":[],
+	"componentModels":[
+		{
+			"constructors":[
+				{
+					"parameterNames":[],
+					"parameterTypes":[]
+				}
+			],
+			"description":"",
+			"implement":"com.joyrun.wechat.WechatFragment",
+			"module":"",
+			"name":"",
+			"path":"",
+			"protocol":"androidx.fragment.app.Fragment"
+		},
+		{
+			"constructors":[
+				{
+					"parameterNames":[],
+					"parameterTypes":[]
+				}
+			],
+			"description":"",
+			"implement":"com.joyrun.wechat.WechatService",
+			"module":"",
+			"name":"",
+			"path":"WechatService",
+			"protocol":"com.joyrun.base.service.IWachatService"
+		}
+	],
+	"delegateModels":[],
+	"interceptorModels":[],
+	"taskModels":[]
+}

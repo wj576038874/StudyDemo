@@ -1,0 +1,16 @@
+{
+	"activityModels":[
+		{
+			"description":"",
+			"exported":false,
+			"name":"",
+			"params":[],
+			"path":"login/LoginActivity",
+			"type":"com.joyrun.login.LoginActivity"
+		}
+	],
+	"componentModels":[],
+	"delegateModels":[],
+	"interceptorModels":[],
+	"taskModels":[]
+}

@@ -1,0 +1,23 @@
+project.ext {
+
+    android = [
+            compileSdkVersion      : 28,
+            buildToolsVersion      : '29.0.2',
+            minSdkVersion          : 16,
+            targetSdkVersion       : 28,
+
+            versionCode            : 1,
+            versionName            : "1.0",
+
+            jdk_targetCompatibility: JavaVersion.VERSION_1_8,
+            jdk_sourceCompatibility: JavaVersion.VERSION_1_8
+    ]
+
+    asComponent = [
+            home      : true,
+            login     : true,
+            wechat      : true,
+            mine      : true,
+            collection: true
+    ]
+}

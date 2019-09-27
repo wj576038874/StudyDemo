@@ -1,0 +1,36 @@
+{
+	"activityModels":[],
+	"componentModels":[
+		{
+			"constructors":[
+				{
+					"parameterNames":[],
+					"parameterTypes":[]
+				}
+			],
+			"description":"",
+			"implement":"com.joyrun.home.HomeFragment",
+			"module":"",
+			"name":"",
+			"path":"",
+			"protocol":"androidx.fragment.app.Fragment"
+		},
+		{
+			"constructors":[
+				{
+					"parameterNames":[],
+					"parameterTypes":[]
+				}
+			],
+			"description":"",
+			"implement":"com.joyrun.home.HomeService",
+			"module":"",
+			"name":"",
+			"path":"HomeService",
+			"protocol":"com.joyrun.base.service.IHomeService"
+		}
+	],
+	"delegateModels":[],
+	"interceptorModels":[],
+	"taskModels":[]
+}

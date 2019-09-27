@@ -1,0 +1,7 @@
+subprojects {
+    afterEvaluate {
+        android {
+            resourcePrefix "${project.name.toLowerCase().replaceAll("-", "_")}_"
+        }
+    }
+}

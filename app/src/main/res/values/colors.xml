@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="app_colorPrimary">@color/base_main</color>
+    <color name="app_colorPrimaryDark">@color/base_main</color>
+    <color name="app_colorAccent">@color/base_main</color>
+
+    <color name="app_ic_launcher_background_start">@color/base_main</color>
+    <color name="app_ic_launcher_background_end">@color/base_main</color>
+
+    <color name="app_bottom_bar_overlay">#aff5f5f5</color>
+    <color name="app_mine_blur_overlay">#33000000</color>
+    <color name="app_about_me_blur_overlay">#33000000</color>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="base_topic_item_padding_vertical">16dp</dimen>
+    <dimen name="base_topic_item_padding_horizontal">20dp</dimen>
+
+    <dimen name="base_panel_space_1">24dp</dimen>
+    <dimen name="base_panel_text_1">12sp</dimen>
+    <dimen name="base_panel_space_2">36dp</dimen>
+    <dimen name="base_panel_text_2">16dp</dimen>
+
+
+    <!--==========================通用============================-->
+    <dimen name="base_action_bar_height">44dp</dimen>
+    <dimen name="base_action_bar_bottom_line_height">1dp</dimen>
+    <dimen name="base_bottom_bar_height">49dp</dimen>
+
+    <!--==========================文字大小============================-->
+    <dimen name="base_text_headline">22sp</dimen>
+    <dimen name="base_text_title">18sp</dimen>
+    <dimen name="base_text_subtitle">17sp</dimen>
+    <dimen name="base_text_content">15sp</dimen>
+    <dimen name="base_text_auxiliary">13sp</dimen>
+    <dimen name="base_text_notes">12sp</dimen>
+    <dimen name="base_text_time">11sp</dimen>
+
+    <dimen name="base_round_radius">8dp</dimen>
+
+</resources>
