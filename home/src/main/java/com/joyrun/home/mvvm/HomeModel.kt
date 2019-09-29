@@ -25,16 +25,16 @@ class HomeModel(private val homeRepository: HomeRepository = HomeRepository()) {
         })
     }
 
-    fun getdata2(mutableLiveData: MutableLiveData<ResponseResource<List<WelfareInfo>>>){
-        homeRepository.getdata2(object : ResponseCallback<GankIoWelfareListBean>(){
-            override fun success(data: GankIoWelfareListBean) {
-                mutableLiveData.value = ResponseResource.success(data.results)
-            }
-
-            override fun error(msg: String?) {
-                mutableLiveData.value = ResponseResource.error(msg)
-            }
-        })
-    }
+//    fun getdata2(mutableLiveData: MutableLiveData<ResponseResource<List<WelfareInfo>>>){
+//        homeRepository.getdata2(object : ResponseCallback<GankIoWelfareListBean>(){
+//            override fun success(data: GankIoWelfareListBean) {
+//                mutableLiveData.value = ResponseResource.success(data.results)
+//            }
+//
+//            override fun error(msg: String?) {
+//                mutableLiveData.value = ResponseResource.error(msg)
+//            }
+//        })
+//    }
 
 }

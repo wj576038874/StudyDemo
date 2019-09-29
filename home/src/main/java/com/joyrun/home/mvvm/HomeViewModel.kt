@@ -18,8 +18,8 @@ class HomeViewModel(private val homeModel: HomeModel = HomeModel()) : ViewModel(
         homeModel.getData(mutableLiveData)
     }
 
-    fun getdata2(){
-        homeModel.getdata2(mutableLiveData)
-    }
+//    fun getdata2(){
+//        homeModel.getdata2(mutableLiveData)
+//    }
 
 }

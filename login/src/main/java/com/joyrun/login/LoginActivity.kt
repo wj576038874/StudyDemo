@@ -42,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
 
         login_btn.setOnClickListener {
             login_srl.isRefreshing = true
-            loginViewModel.login2()
+            loginViewModel.login()
         }
         login_phone_edit onTextChange {
             afterTextChanged {

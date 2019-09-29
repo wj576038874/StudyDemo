@@ -1,9 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".WalletActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <Button
+        android:id="@+id/btn_pt"
+        android:text="普通异步"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+
+    <Button
+        android:id="@+id/btn_login"
+        android:text="连续请求"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+
+
+
+    <Button
+        android:id="@+id/btn_async"
+        android:text="合并请求"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+
+    <Button
+        android:id="@+id/btn_file"
+        android:text="读取文件"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:scaleType="centerCrop"
+        android:layout_height="200dp"/>
+
+
+    <Button
+        android:id="@+id/btn_co"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+</LinearLayout>

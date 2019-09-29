@@ -139,4 +139,23 @@ public class Topic implements Serializable {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", created_at='" + created_at + '\'' +
+                ", updated_at='" + updated_at + '\'' +
+                ", replied_at='" + replied_at + '\'' +
+                ", replies_count=" + replies_count +
+                ", node_name='" + node_name + '\'' +
+                ", node_id=" + node_id +
+                ", last_reply_user_id=" + last_reply_user_id +
+                ", last_reply_user_login='" + last_reply_user_login + '\'' +
+                ", user=" + user +
+                ", deleted=" + deleted +
+                ", excellent=" + excellent +
+                '}';
+    }
 }

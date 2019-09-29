@@ -1,10 +1,9 @@
 package com.joyrun.collection.mvvm
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.joyrun.base.coroutine.BaseViewModel
 import com.joyrun.base.coroutine.RetrofitHelper
-import com.joyrun.base.coroutine.loadData
 import com.joyrun.base.entity.login.UserInfo
 import com.joyrun.base.http.ResponseResource
 import com.joyrun.base.entity.collection.Topic
@@ -12,17 +11,16 @@ import com.joyrun.base.entity.collection.TopicWithNews
 import com.joyrun.base.entity.news.NewsInfo
 import com.joyrun.collection.CollectionApi
 import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 /**
  * author: wneJie
  * date: 2019-09-25 16:03
- * desc:
+ * desc:使用协程集合retrofit请求接口返回数据 并做异常处理
  */
 class CollectionViewModel(private val collectionModel: CollectionModel = CollectionModel()) :
-    ViewModel() {
+    BaseViewModel() {
 
 
     val mutableLiveData = MutableLiveData<ResponseResource<List<Topic>>>()
@@ -37,7 +35,7 @@ class CollectionViewModel(private val collectionModel: CollectionModel = Collect
     }
 
 
-    fun get2(login: String){
+    fun get2(login: String) {
 
         loadData<List<Topic>> {
             onStart {
@@ -58,7 +56,7 @@ class CollectionViewModel(private val collectionModel: CollectionModel = Collect
         }
     }
 
-    fun login(){
+    fun login() {
         loadData<UserInfo> {
 
             onStart {
@@ -79,18 +77,31 @@ class CollectionViewModel(private val collectionModel: CollectionModel = Collect
         }
     }
 
-    fun getTopicWithNews(){
-        viewModelScope.launch {
-            val api = RetrofitHelper.getApiService(CollectionApi::class.java)
-            val news = async { api.getNewsList(1,20) }
-            val topics = async { api.getTopics("wj576038874") }
-            val result = suspendingMerge(news ,topics)
-            data.value = ResponseResource.success(result)
+
+    /**
+     * 结构化并发 实现请求并发处理
+     */
+    fun getTopicWithNews() {
+        loadData<TopicWithNews> {
+
+            onStart {
+                mutableLiveData.value = ResponseResource.loading()
+            }
+
+            request {
+                collectionModel.getTopicWithNews()
+            }
+
+            onSuccess {
+                data.value = ResponseResource.success(it)
+            }
+
+
+            onError { msg, _ ->
+                data.value = ResponseResource.error(msg)
+            }
         }
     }
 
-    private  suspend fun suspendingMerge(news: Deferred<List<NewsInfo>>, topics: Deferred<List<Topic>>): TopicWithNews {
-        return TopicWithNews(topics.await() , news.await())
-    }
 
 }

@@ -61,14 +61,14 @@ class LoginRepository : NetImpl<LoginApi>() {
     }
 
 
-    fun login2(responseCallback: ResponseCallback<Response<UserInfo>>) {
-        MainScope().launch {
-            val responseToken = mApiService.getToken2("", "", "password", "wj576038874", "1rujiwang")
-            responseToken.body()?.let {
-                UserManager.get().saveToken(it.access_token)
-            }
-            val userInfoResp = mApiService.getMe2()
-            responseCallback.success(userInfoResp)
-        }
-    }
+//    fun login2(responseCallback: ResponseCallback<Response<UserInfo>>) {
+//        MainScope().launch {
+//            val responseToken = mApiService.getToken2("", "", "password", "wj576038874", "1rujiwang")
+//            responseToken.body()?.let {
+//                UserManager.get().saveToken(it.access_token)
+//            }
+//            val userInfoResp = mApiService.getMe2()
+//            responseCallback.success(userInfoResp)
+//        }
+//    }
 }

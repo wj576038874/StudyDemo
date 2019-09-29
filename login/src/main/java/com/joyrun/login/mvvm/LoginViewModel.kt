@@ -19,7 +19,7 @@ class LoginViewModel(private val loginModel: LoginModel = LoginModel()) : ViewMo
         loginModel.login(mutableLiveData)
     }
 
-    fun login2(){
-        loginModel.login2(mutableLiveData)
-    }
+//    fun login2(){
+//        loginModel.login2(mutableLiveData)
+//    }
 }

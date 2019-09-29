@@ -1,7 +1,6 @@
 package com.joyrun.collection.mvvm
 
 import androidx.lifecycle.MutableLiveData
-import com.joyrun.base.core.result
 import com.joyrun.base.exceptionHandler
 import com.joyrun.base.http.NetImpl
 import com.joyrun.base.http.ResponseResource
@@ -9,9 +8,7 @@ import com.joyrun.base.coroutine.RetrofitHelper
 import com.joyrun.base.entity.login.UserInfo
 import com.joyrun.collection.CollectionApi
 import com.joyrun.base.entity.collection.Topic
-import com.joyrun.base.entity.collection.TopicContent
 import com.joyrun.base.entity.collection.TopicWithNews
-import com.joyrun.base.entity.news.NewsInfo
 import kotlinx.coroutines.*
 
 
@@ -50,19 +47,24 @@ class CollectionModel : NetImpl<CollectionApi>() {
     }
 
 
-    fun getTopicWithNews(mutableLiveData: MutableLiveData<ResponseResource<TopicWithNews>>){
-        GlobalScope.launch {
-            val api = RetrofitHelper.getApiService(CollectionApi::class.java)
+    suspend fun getTopicWithNews(): TopicWithNews {
+        val api = RetrofitHelper.getApiService(CollectionApi::class.java)
+        //coroutineScope async结构化并发
+        //特点 数据返回时保证所有的子协程都会执行完毕 不会造成泄漏
+        return coroutineScope {
             val news = async { api.getNewsList(1,20) }
             val topics = async { api.getTopics("wj576038874") }
-            val result = suspendingMerge(news ,topics)
-            mutableLiveData.value = ResponseResource.success(result)
+            TopicWithNews(topics.await() , news.await())
         }
     }
 
-    private  suspend fun suspendingMerge(news: Deferred<List<NewsInfo>>, topics: Deferred<List<Topic>>): TopicWithNews {
-        return TopicWithNews(topics.await() , news.await())
-    }
+
+
+
+
+//    private  suspend fun suspendingMerge(news: Deferred<List<NewsInfo>>, topics: Deferred<List<Topic>>): TopicWithNews {
+//        return TopicWithNews(topics.await() , news.await())
+//    }
 
 
 //    suspend fun getUserCoroutine() = suspendCoroutine<String> {

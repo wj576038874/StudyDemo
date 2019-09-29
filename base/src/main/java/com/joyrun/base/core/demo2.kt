@@ -9,7 +9,7 @@ import kotlinx.coroutines.*
  */
 fun main() = runBlocking {
     val job = GlobalScope.launch {
-        delay(10000)
+        delay(3000)
         println("world${Thread.currentThread().name}")
     }
     println("hello${Thread.currentThread().name}")

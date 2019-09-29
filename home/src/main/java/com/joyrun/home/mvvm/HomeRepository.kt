@@ -25,11 +25,11 @@ class HomeRepository : NetImpl<HomeApi>() {
         })
     }
 
-    fun getdata2(responseCallback: ResponseCallback<GankIoWelfareListBean>){
-        val mainScope = MainScope()
-        mainScope.launch(Dispatchers.Main){
-            val datas = mApiService.getData2()
-            responseCallback.success(datas)
-        }
-    }
+//    fun getdata2(responseCallback: ResponseCallback<GankIoWelfareListBean>){
+//        val mainScope = MainScope()
+//        mainScope.launch(Dispatchers.Main){
+//            val datas = mApiService.getData2()
+//            responseCallback.success(datas)
+//        }
+//    }
 }

@@ -22,6 +22,7 @@ class RetrofitRequestDSL<T> {
     internal var onComplete: (() -> Unit)? = null
 
 
+
     fun onStart(onStart : () -> Unit){
         this.onStart = onStart
     }

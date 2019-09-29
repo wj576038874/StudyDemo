@@ -1,5 +1,8 @@
 package com.joyrun.base
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -12,6 +15,13 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        GlobalScope.launch {
+            println("thread1 - ${Thread.currentThread().name}")
+            launch(Dispatchers.Default) {
+                println("thread3 - ${Thread.currentThread().name}")
+            }
+        }
+        println("thread2 - ${Thread.currentThread().name}")
+        Thread.sleep(2000)
     }
 }

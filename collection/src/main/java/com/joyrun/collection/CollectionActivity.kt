@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.grouter.GActivityCenter
 import com.grouter.RouterActivity
 import com.joyrun.base.UserManager
 import com.joyrun.base.coroutine.log
@@ -38,7 +39,7 @@ class CollectionActivity : AppCompatActivity() {
         rv_collection.layoutManager = LinearLayoutManager(this)
         rv_collection.adapter = collectionAdapter
         collectionAdapter.setOnItemClickListener { adapter, view, position ->
-            collectionViewModel.login()
+            GActivityCenter.WalletActivity().start(this)
         }
 
         collectionViewModel.mutableLiveData.observe(this, object : ResponseCallback<List<Topic>>() {
@@ -59,7 +60,7 @@ class CollectionActivity : AppCompatActivity() {
         })
 //        srl_collection.isEnabled = false
         srl_collection.isRefreshing = true
-        UserManager.get().getUserInfo()?.login?.log()
+//        UserManager.get().getUserInfo()?.login?.log()
 //        collectionViewModel.get("wj576038874")
 
 //        collectionViewModel.get2("wj576038874")

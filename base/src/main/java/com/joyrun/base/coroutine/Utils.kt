@@ -14,8 +14,8 @@ fun showToast(msg: String?) {
     ToastUtils.showToast(msg)
 }
 
-fun Any.log() {
-    Log.e("asd" , this.toString())
+fun Any?.log() {
+    Log.e("asd" , this?.toString())
 }
 
 fun dip2px(context: Context, dpValue: Float): Int {

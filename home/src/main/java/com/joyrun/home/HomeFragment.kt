@@ -29,7 +29,7 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     override fun onRefresh() {
         srl.isRefreshing = true
-        homeViewModel.getdata2()
+        homeViewModel.getData()
     }
 
     override fun onCreateView(
@@ -38,7 +38,7 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         savedInstanceState: Bundle?
     ): View? {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        homeViewModel.getdata2()
+        homeViewModel.getData()
         return inflater.inflate(R.layout.home_fragment_home , container , false)
     }
 
