@@ -14,8 +14,15 @@ class HomeViewModel(private val homeModel: HomeModel = HomeModel()) : ViewModel(
 
     var mutableLiveData: MutableLiveData<ResponseResource<List<WelfareInfo>>> = MutableLiveData()
 
+    var mutableLiveData2: MutableLiveData<ResponseResource<List<WelfareInfo>>> = MutableLiveData()
+
     fun getData() {
-        homeModel.getData(mutableLiveData)
+        homeModel.getData(1,mutableLiveData)
+    }
+
+
+    fun getpage(page:Int){
+        homeModel.getData(page,mutableLiveData2)
     }
 
 //    fun getdata2(){

@@ -18,8 +18,12 @@
 		{
 			"constructors":[
 				{
-					"parameterNames":[],
-					"parameterTypes":[]
+					"parameterNames":[
+						"context"
+					],
+					"parameterTypes":[
+						"android.content.Context"
+					]
 				}
 			],
 			"description":"",

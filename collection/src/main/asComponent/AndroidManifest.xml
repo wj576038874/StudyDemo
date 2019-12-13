@@ -3,8 +3,9 @@
     package="com.joyrun.collection">
 
     <application>
-        <activity android:name=".WalletActivity"></activity>
+        <activity android:name=".WalletActivity"/>
         <activity android:name=".CollectionActivity" />
+        <activity android:name=".TestActivity"/>
     </application>
 
 </manifest>

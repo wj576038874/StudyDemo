@@ -7,6 +7,10 @@ public class GActivityCenter {
     return new BuilderSet.CollectionActivityHelper();
   }
 
+  public static BuilderSet.TestActivityHelper TestActivity() {
+    return new BuilderSet.TestActivityHelper();
+  }
+
   public static BuilderSet.WalletActivityHelper WalletActivity() {
     return new BuilderSet.WalletActivityHelper();
   }
@@ -23,6 +27,12 @@ public class GActivityCenter {
     public static class CollectionActivityHelper extends GActivityBuilder {
       CollectionActivityHelper() {
         super("com.joyrun.collection.CollectionActivity");
+      }
+    }
+
+    public static class TestActivityHelper extends GActivityBuilder {
+      TestActivityHelper() {
+        super("com.joyrun.collection.TestActivity");
       }
     }
 

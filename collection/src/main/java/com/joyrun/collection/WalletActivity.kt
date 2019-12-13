@@ -1,15 +1,11 @@
 package com.joyrun.collection
 
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Environment
-import android.util.Log
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
-import androidx.lifecycle.ViewModelProviders
+import com.grouter.GActivityCenter
 import com.grouter.RouterActivity
+import com.joyrun.base.coroutine.BaseActivity
 import com.joyrun.base.coroutine.log
 import com.joyrun.base.coroutine.showToast
 import com.joyrun.base.entity.collection.Topic
@@ -19,35 +15,34 @@ import com.joyrun.base.http.ResponseCallback
 import com.joyrun.collection.mvvm.WalletViewModel
 import kotlinx.android.synthetic.main.collection_desc_activity.*
 import kotlinx.coroutines.*
-import java.io.File
 
 @RouterActivity(value = "collection/WalletActivity", exported = false)
-class WalletActivity : AppCompatActivity() {
+class WalletActivity : BaseActivity<WalletViewModel>() {
+
+
+    override fun getViewModelClass(): Class<WalletViewModel> = WalletViewModel::class.java
+
     private lateinit var job:Job
-    private lateinit var walletViewModel: WalletViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.collection_desc_activity)
 
-        walletViewModel = ViewModelProviders.of(this).get(WalletViewModel::class.java)
-
-
 
         btn_pt.setOnClickListener {
-            walletViewModel.fun1()
+            viewModel.fun1()
         }
 
         btn_login.setOnClickListener {
-            walletViewModel.fun2()
+            viewModel.fun2()
         }
 
         btn_async.setOnClickListener {
-            walletViewModel.fun3_2()
+            viewModel.fun3_2()
         }
 
         btn_file.setOnClickListener {
-            walletViewModel.fun_file()
+            viewModel.fun_file()
         }
 
         btn_co.setOnClickListener {
@@ -55,7 +50,7 @@ class WalletActivity : AppCompatActivity() {
         }
 
 
-        walletViewModel.liveData1.observe(this, object : ResponseCallback<List<Topic>>() {
+        viewModel.liveData1.observe(this, object : ResponseCallback<List<Topic>>() {
 
             override fun success(data: List<Topic>) {
                 showToast(data.size.toString())
@@ -71,7 +66,7 @@ class WalletActivity : AppCompatActivity() {
 
         })
 
-        walletViewModel.liveData2.observe(this, object : ResponseCallback<UserInfo>() {
+        viewModel.liveData2.observe(this, object : ResponseCallback<UserInfo>() {
 
 
             override fun success(data: UserInfo) {
@@ -87,7 +82,7 @@ class WalletActivity : AppCompatActivity() {
         })
 
 
-        walletViewModel.liveData3.observe(this, object : ResponseCallback<TopicWithNews>() {
+        viewModel.liveData3.observe(this, object : ResponseCallback<TopicWithNews>() {
 
             override fun success(data: TopicWithNews) {
                 showToast(data.news.size.toString())
@@ -104,7 +99,7 @@ class WalletActivity : AppCompatActivity() {
 
         })
 
-        walletViewModel.liveDataFile.observe(this , object : ResponseCallback<Bitmap>() {
+        viewModel.liveDataFile.observe(this , object : ResponseCallback<Bitmap>() {
 
             override fun success(data: Bitmap) {
                 img.setImageBitmap(data)

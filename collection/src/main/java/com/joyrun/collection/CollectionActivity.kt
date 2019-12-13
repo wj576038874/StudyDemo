@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.grouter.GActivityCenter
 import com.grouter.RouterActivity
 import com.joyrun.base.UserManager
+import com.joyrun.base.coroutine.BaseActivity
 import com.joyrun.base.coroutine.log
 import com.joyrun.base.coroutine.showToast
 import com.joyrun.base.entity.login.UserInfo
@@ -21,9 +22,10 @@ import kotlinx.android.synthetic.main.collection_activity_collection.*
  * 我的收藏
  */
 @RouterActivity(value = "collection/CollectionActivity", exported = false)
-class CollectionActivity : AppCompatActivity() {
+class CollectionActivity : BaseActivity<CollectionViewModel>() {
+    override fun getViewModelClass(): Class<CollectionViewModel> = CollectionViewModel::class.java
 
-    private lateinit var collectionViewModel: CollectionViewModel
+//    private lateinit var collectionViewModel: CollectionViewModel
 
     private lateinit var collectionAdapter: CollectionAdapter
 
@@ -31,7 +33,7 @@ class CollectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.collection_activity_collection)
 
-        collectionViewModel = ViewModelProviders.of(this).get(CollectionViewModel::class.java)
+//        collectionViewModel = ViewModelProviders.of(this).get(CollectionViewModel::class.java)
 
         collectionAdapter = CollectionAdapter()
 
@@ -42,7 +44,7 @@ class CollectionActivity : AppCompatActivity() {
             GActivityCenter.WalletActivity().start(this)
         }
 
-        collectionViewModel.mutableLiveData.observe(this, object : ResponseCallback<List<Topic>>() {
+        viewModel.mutableLiveData.observe(this, object : ResponseCallback<List<Topic>>() {
 
             override fun loading() {
                 srl_collection.isRefreshing = true
@@ -65,10 +67,10 @@ class CollectionActivity : AppCompatActivity() {
 
 //        collectionViewModel.get2("wj576038874")
 
-        collectionViewModel.getTopicWithNews()
+        viewModel.getTopicWithNews()
 
 
-        collectionViewModel.userInfoLiveData.observe(this , object : ResponseCallback<UserInfo>(){
+        viewModel.userInfoLiveData.observe(this , object : ResponseCallback<UserInfo>(){
 
             override fun loading() {
                 srl_collection.isRefreshing = true
@@ -85,7 +87,7 @@ class CollectionActivity : AppCompatActivity() {
             }
         })
 
-        collectionViewModel.data.observe(this ,  object : ResponseCallback<TopicWithNews>(){
+        viewModel.data.observe(this ,  object : ResponseCallback<TopicWithNews>(){
 
 
             override fun success(data: TopicWithNews) {

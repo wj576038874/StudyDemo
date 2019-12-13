@@ -11,6 +11,15 @@
 		},
 		{
 			"description":"",
+			"exported":true,
+			"module":"",
+			"name":"",
+			"params":[],
+			"path":"collection/TestActivity",
+			"type":"com.joyrun.collection.TestActivity"
+		},
+		{
+			"description":"",
 			"exported":false,
 			"module":"",
 			"name":"",

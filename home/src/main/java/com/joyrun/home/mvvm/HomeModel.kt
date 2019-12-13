@@ -13,8 +13,8 @@ import com.joyrun.base.entity.home.WelfareInfo
  */
 class HomeModel(private val homeRepository: HomeRepository = HomeRepository()) {
 
-    fun getData(mutableLiveData: MutableLiveData<ResponseResource<List<WelfareInfo>>>){
-        homeRepository.getData(object : ResponseCallback<GankIoWelfareListBean>(){
+    fun getData(page:Int,mutableLiveData: MutableLiveData<ResponseResource<List<WelfareInfo>>>){
+        homeRepository.getData(page,object : ResponseCallback<GankIoWelfareListBean>(){
             override fun success(data: GankIoWelfareListBean) {
                 mutableLiveData.value = ResponseResource.success(data.results)
             }

@@ -25,6 +25,7 @@ class WalletViewModel(private val walletRepository: WalletRepository = WalletRep
 
     val liveDataFile = MutableLiveData<ResponseResource<Bitmap>>()
 
+
     fun fun1(){
 
         loadData<List<Topic>> {

@@ -8,5 +8,6 @@ package com.joyrun.base.entity.home
 class WelfareInfo(
     val id: Long,
     val createdAt: String,
-    val url: String
+    val url: String,
+    var height:Int
 )

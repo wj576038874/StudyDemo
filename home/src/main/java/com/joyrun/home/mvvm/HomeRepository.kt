@@ -13,8 +13,8 @@ import kotlinx.coroutines.*
  */
 class HomeRepository : NetImpl<HomeApi>() {
 
-    fun getData(responseCallback: ResponseCallback<GankIoWelfareListBean>){
-        subscribe(mApiService.getData() , object : ResponseCallback<GankIoWelfareListBean>(){
+    fun getData(page:Int ,responseCallback: ResponseCallback<GankIoWelfareListBean>){
+        subscribe(mApiService.getData(page) , object : ResponseCallback<GankIoWelfareListBean>(){
             override fun success(data: GankIoWelfareListBean) {
                 responseCallback.success(data)
             }

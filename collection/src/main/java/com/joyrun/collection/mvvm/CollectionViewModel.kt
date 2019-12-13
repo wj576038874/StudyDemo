@@ -37,6 +37,7 @@ class CollectionViewModel(private val collectionModel: CollectionModel = Collect
 
     fun get2(login: String) {
 
+
         loadData<List<Topic>> {
             onStart {
                 mutableLiveData.value = ResponseResource.loading()

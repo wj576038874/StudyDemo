@@ -15,6 +15,7 @@ public class GRouterInitializer extends GRouter {
   static {
     // collection
     activityMap.put("collection/CollectionActivity", "com.joyrun.collection.CollectionActivity");
+    activityMap.put("collection/TestActivity", "com.joyrun.collection.TestActivity");
     activityMap.put("collection/WalletActivity", "com.joyrun.collection.WalletActivity");
     // login
     activityMap.put("login/LoginActivity", "com.joyrun.login.LoginActivity");

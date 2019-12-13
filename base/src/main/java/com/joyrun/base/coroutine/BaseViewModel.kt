@@ -15,7 +15,7 @@ import java.net.SocketTimeoutException
  * date: 2019-09-29 09:21
  * desc:
  */
-open class BaseViewModel : ViewModel(){
+open class BaseViewModel : ViewModel() {
 
 
     fun <T> loadData(block: RetrofitRequestDSL<T>.() -> Unit) {
@@ -26,6 +26,13 @@ open class BaseViewModel : ViewModel(){
             viewModelScope.launch {
 
                 try {
+//                    val s = request?.invoke()
+//                    if (s != null){
+//                        onSuccess?.invoke(s)
+//                    }else{
+//                        onError?.invoke("asd","")
+//                    }
+
                     request?.let {
 
                         when (val response = it()) {
@@ -35,7 +42,10 @@ open class BaseViewModel : ViewModel(){
                                     onSuccess?.invoke(response)
 //                                    onSuccess!!(response)
                                 } else {
-                                    onError?.invoke(response.errorCode.toString(), response.errorMsg)//onError("","")
+                                    onError?.invoke(
+                                        response.errorCode.toString(),
+                                        response.errorMsg
+                                    )//onError("","")
                                 }
                             }
                             else -> {
@@ -69,4 +79,60 @@ open class BaseViewModel : ViewModel(){
         }
 
     }
+
+
+//    val error = MutableLiveData<String>()
+//
+//
+//
+//    fun loadData2(block: suspend () -> Unit) = viewModelScope.launch {
+//
+//        try {
+//
+//            block()
+//
+//        } catch (throwable: Exception) {
+//            val msg: String = when (throwable) {
+//                is HttpException -> {
+//                    when (throwable.code()) {
+//                        400 -> "手机号或验证码错误"
+//                        401 -> "token失效,请重新登录"
+//                        else -> "请求出错了，错误代码" + throwable.code()
+//                    }
+//                }
+//                is SocketTimeoutException -> "请求超时。请稍后重试！"
+//                is ConnectException -> "请求超时。请稍后重试！"
+//                else -> "请求出错了。请稍后重试！${throwable.message}"
+//            }
+//            if (!TextUtils.isEmpty(msg)) {
+//                error.value = msg
+//            }
+//        }
+//    }
+
+
+//    fun <T> load(request: suspend () -> T): MutableLiveData<ResponseResource<T>> {
+//
+//        val data = MutableLiveData<ResponseResource<T>>()
+//
+//        loadData<T> {
+//
+//            onStart {
+//                data.value = ResponseResource.loading()
+//            }
+//
+//            request {
+//                request()
+//            }
+//
+//            onSuccess {
+//                data.value = ResponseResource.success(it)
+//            }
+//
+//            onError { msg, code ->
+//                data.value = ResponseResource.error(msg)
+//            }
+//        }
+//        return data
+//    }
 }

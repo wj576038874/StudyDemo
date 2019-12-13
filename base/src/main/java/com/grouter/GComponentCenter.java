@@ -1,5 +1,6 @@
 package com.grouter;
 
+import android.content.Context;
 import androidx.fragment.app.Fragment;
 import com.joyrun.base.service.IHomeService;
 import com.joyrun.base.service.IMineService;
@@ -10,8 +11,12 @@ public class GComponentCenter {
     return ComponentUtils.getInstance(Fragment.class,"com.joyrun.home.HomeFragment");
   }
 
-  public static IHomeService HomeService() {
-    return ComponentUtils.getInstance(IHomeService.class,"com.joyrun.home.HomeService");
+  public static IHomeService HomeService(Context context) {
+    Class[] classes = new Class[1];
+    Object[] objects = new Object[1];
+    classes[0] = Context.class;
+    objects[0] = context;
+    return ComponentUtils.getInstance(IHomeService.class,"com.joyrun.home.HomeService",classes,objects);
   }
 
   public static Fragment MineFragment() {
